@@ -43,3 +43,10 @@ This will start the server and the application, making it accessible at http://l
 
 ![Initial application page](/images/Screenshot%20(717).png)
 
+## Links
+
+Github URL:
+https://github.com/jbranch6432/Social_Network_JB.git
+
+Video Walkthrough:
+https://drive.google.com/file/d/1RYZSlgbGCblt5Ozhqhu5jU11uuQeWoEE/view
