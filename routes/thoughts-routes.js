@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Thoughts, Thought} = require('../../models');
+const {User, Thoughts} = require('../models');
 
 router.get("/", async (req, res) => {
     try {
@@ -46,9 +46,9 @@ router.put("./:thoughtId", async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.delete("/:thoughtsId", async (req.res) => {
+router.delete("/:thoughtsId", async (req, res) => {
     try {
-        const dbThoughtsData = THoughts.findOneAndRemove({_id: req.params.thoughtsId});
+        const dbThoughtsData = Thoughts.findOneAndRemove({_id: req.params.thoughtsId});
         if (! dbThoughtsData) {
             return res.status(404).json({message: "No thought found!"});
         }
@@ -68,7 +68,7 @@ router.delete("/:thoughtsId", async (req.res) => {
     }
 });
 
-router.post("/:thoughtsId/reactions", async (req.res) => {
+router.post("/:thoughtsId/reactions", async (req, res) => {
     try {
         const dbThoughtsData = await Thoughts.findOneAndUpdate({
             _id: req.params.thoughtsId

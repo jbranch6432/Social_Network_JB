@@ -18,7 +18,12 @@ const thoughtsSchema = new Schema({
     type: String,
     required: true
   },
-  reactions: [reactionSchema]
+  reactions: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Reactions',
+    }
+  ]
 }, {
      toJSON: {
       getters: true
@@ -30,6 +35,6 @@ const thoughtsSchema = new Schema({
     return this.reactions.length;
   })
 
-  const Thoughts = model("Thoughts", thoughtSchema);
+  const Thoughts = model("Thoughts", thoughtsSchema);
 
   module.exports = Thoughts;
